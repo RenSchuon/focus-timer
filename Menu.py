@@ -39,4 +39,12 @@ class Menu(object):
             self.select_input()
 
     
-    #def time_start():
+    def time_start(self):
+        if self.type == 0:
+            self.work.start()
+            self.type = 1
+            return 0
+        else:
+            self.off.start()
+            self.type = 0
+            return 1
