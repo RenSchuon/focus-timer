@@ -52,10 +52,28 @@ class FocusTimer(unittest.TestCase):
         self.assertEqual(result, 1)
 
 
-    def test_Menu_init(self):
+    def test_Menu_init_select(self):
         ob = Menu.Menu()
         #selection should default to 1
         self.assertEqual(ob.select, 1)
+
+
+    def test_Menu_init_type(self):
+        ob = Menu.Menu()
+        #type should default to 0
+        self.assertEqual(ob.type, 1)
+
+
+    def test_Menu_init_work(self):
+        ob = Menu.Menu()
+        #work's time should default to 1200
+        self.assertEqual(ob.work.time, 1200)
+
+
+    def test_Menu_init_off(self):
+        ob = Menu.Menu()
+        #off's time should default to 120
+        self.assertEqual(ob.off.time, 120)
 
 
     def test_Menu_option_start(self):
