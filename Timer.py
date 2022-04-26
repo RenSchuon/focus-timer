@@ -9,4 +9,7 @@ class Timer(object):
         result = int(self.time/60)
         return result
 
+      def get_sec(self):
+        return self.time%60
+
       
