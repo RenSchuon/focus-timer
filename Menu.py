@@ -10,9 +10,9 @@ class Menu(object):
 
     
     def select_input(self):
-        #need integration test for
         self.select = input("1 start timer\n2 change work timer\n3 change break timer\n0 exit")
         self.option()
+        return self.select
 
 
     def option(self):
@@ -34,9 +34,9 @@ class Menu(object):
 
 
     def loop(self):
-        #need integration test for
         while self.select != 0:
             self.select_input()
+        return 1
 
     
     def time_start(self):
@@ -62,3 +62,8 @@ class Menu(object):
         new_time = new_time * 60
         self.off.time = new_time
         return new_time
+
+
+    def bad_entry(self):
+        print("invalid selection")
+        self.select_input()

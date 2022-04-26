@@ -1,6 +1,11 @@
 import unittest
+from io import StringIO
 import Timer
 import Menu
+
+#global variables for user input mocking
+select_input_mock0 = StringIO('0\n')
+
  
 class FocusTimer(unittest.TestCase):
     def test_Timer_default_time(self):
@@ -116,6 +121,12 @@ class FocusTimer(unittest.TestCase):
         self.assertEqual(ob.option(), -1)
 
 
+    def test_Menu_loop(self):
+        ob = Menu.Menu()
+        ob.select = 0
+        self.assertEqual(ob.loop(), 1)
+    
+    
     def test_Menu_time_start_work(self):
         ob = Menu.Menu()
         #type is default set to 0
@@ -126,6 +137,19 @@ class FocusTimer(unittest.TestCase):
         ob = Menu.Menu()
         ob.type = 1
         self.assertEqual(ob.time_start(), 1)
+
+
+
+
+
+
+
+
+    #integration tests
+    def test_Menu_select_input(monkeypatch):
+        monkeypatch.setattr('sys.stdin', select_input_mock0)
+        ob = Menu.Menu()
+        assert ob.time_start() == 0
 
 
     def test_Menu_edit_work(self):
@@ -144,7 +168,12 @@ class FocusTimer(unittest.TestCase):
         #Work's time should now be equal to 60 times the user inputted time
 
 
-
+    def test_Menu_edit_off(self):
+        ob = Menu.Menu()
+        #ob.edit_off()
+        #edit work will take in user input for the amount of minutes
+        #self.assertEqual(, )
+        #Work's time should now be equal to 60 times the user inputted time
 
 
 
