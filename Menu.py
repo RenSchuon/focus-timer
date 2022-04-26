@@ -48,3 +48,13 @@ class Menu(object):
             self.off.start()
             self.type = 0
             return 1
+
+    
+    def edit_work(self):
+        new_time = input("input the new time in minutes")
+        new_time = new_time * 60
+        self.work.time = new_time
+        return new_time
+
+
+    
