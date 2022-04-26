@@ -17,7 +17,7 @@ class FocusTimer(unittest.TestCase):
 
     def test_Timer_get_min_whole(self):
         ob = Timer.Timer()
-        min = ob.get_min()
+        min = ob.get_min(ob.get_time())
         #default time is 20 min
         self.assertEqual(min, 20)
 
@@ -26,13 +26,13 @@ class FocusTimer(unittest.TestCase):
         ob = Timer.Timer()
         ob.time = 1195
         #this should be 19 min 55 sec
-        min = ob.get_min()
+        min = ob.get_min(ob.get_time())
         self.assertEqual(min, 19)
 
 
     def test_Timer_get_sec_none(self):
         ob = Timer.Timer()
-        sec = ob.get_sec()
+        sec = ob.get_sec(ob.get_time())
         #default time is 20 min, no seconds should be here
         self.assertEqual(sec, 0)
 
@@ -41,13 +41,13 @@ class FocusTimer(unittest.TestCase):
         ob = Timer.Timer()
         ob.time = 1195
         #this should be 19 min 55 sec
-        sec = ob.get_sec()
+        sec = ob.get_sec(ob.get_time())
         self.assertEqual(sec, 55)
 
     def test_Timer_start(self):
         ob = Timer.Timer()
         result = ob.start()
-        self.assertEqual(result, 0)
+        self.assertEqual(result, 1)
 
 if __name__ == '__main__':
     unittest.main()
