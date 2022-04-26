@@ -5,8 +5,7 @@ import Menu
 
 #global variables for user input mocking
 select_input_mock0 = StringIO('0\n')
-edit_work_mock2 = StringIO('2\n')
-edit_off_mock1 = StringIO('2\n')
+edit_mock1 = StringIO('1\n')
 
  
 class FocusTimer(unittest.TestCase):
@@ -162,28 +161,24 @@ class FocusTimer(unittest.TestCase):
         assert ob.time_start() == 0
 
 
-    def test_Menu_edit_work(self):
+    def test_Menu_edit_work(monkeypatch):
         ob = Menu.Menu()
-        #ob.edit_work()
+        monkeypatch.setattr('sys.stdin', edit_mock1)
+        ob.edit_work()
         #edit work will take in user input for the amount of minutes
-        #self.assertEqual(, )
+        assert ob.work.time == 60
         #Work's time should now be equal to 60 times the user inputted time
 
 
-    def test_Menu_edit_off(self):
+    def test_Menu_edit_off(monkeypatch):
         ob = Menu.Menu()
-        #ob.edit_off()
+        monkeypatch.setattr('sys.stdin', edit_mock1)
+        ob.edit_off()
         #edit work will take in user input for the amount of minutes
-        #self.assertEqual(, )
+        assert ob.off.time == 60
         #Work's time should now be equal to 60 times the user inputted time
 
 
-    def test_Menu_edit_off(self):
-        ob = Menu.Menu()
-        #ob.edit_off()
-        #edit work will take in user input for the amount of minutes
-        #self.assertEqual(, )
-        #Work's time should now be equal to 60 times the user inputted time
 
 
 
