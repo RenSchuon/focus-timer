@@ -35,5 +35,8 @@ class Menu(object):
 
     def loop(self):
         #need integration test for
-        while self.select not 0:
+        while self.select != 0:
             self.select_input()
+
+    
+    #def time_start():

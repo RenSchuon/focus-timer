@@ -104,7 +104,7 @@ class FocusTimer(unittest.TestCase):
         #user should be prompted to put in selection in function before this and then option called
         #this option will exit the loop
         ob = Menu.Menu()
-        ob.aelect = 0
+        ob.select = 0
         self.assertEqual(ob.option(), 0)
 
 
@@ -112,8 +112,27 @@ class FocusTimer(unittest.TestCase):
         #user should be prompted to put in selection in function before this and then option called
         #this option will display error message
         ob = Menu.Menu()
-        ob.aelect = 18
+        ob.select = 18
         self.assertEqual(ob.option(), -1)
+
+
+    def test_Menu_time_start_work(self):
+        ob = Menu.Menu()
+        #type is default set to 0
+        self.assertEqual(ob.time_start(), 0)
+
+
+    def test_Menu_time_start_off(self):
+        ob = Menu.Menu()
+        ob.type = 1
+        self.assertEqual(ob.time_start(), 1)
+
+
+
+
+
+
+
 
 
 if __name__ == '__main__':
