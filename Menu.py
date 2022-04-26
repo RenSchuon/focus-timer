@@ -26,7 +26,7 @@ class Menu(object):
             self.edit_off()
             return 3
         elif self.select == 0:
-            self.goodbye()
+            print("goodbye")
             return 0
         else:
             self.bad_entry()
