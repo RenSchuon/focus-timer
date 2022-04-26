@@ -69,7 +69,7 @@ class FocusTimer(unittest.TestCase):
     def test_Menu_init_type(self):
         ob = Menu.Menu()
         #type should default to 0
-        self.assertEqual(ob.type, 1)
+        self.assertEqual(ob.type, 0)
 
 
     def test_Menu_init_work(self):
