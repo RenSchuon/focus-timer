@@ -26,5 +26,7 @@ class FocusTimer(unittest.TestCase):
         time = ob.get_min()
         self.assertEqual(time, 19)
 
+
+
 if __name__ == '__main__':
     unittest.main()
