@@ -4,8 +4,8 @@ import Timer
 import Menu
 
 #global variables for user input mocking
-select_input_mock0 = StringIO('0\n')
-edit_mock1 = StringIO('1\n')
+
+
 
  
 class FocusTimer(unittest.TestCase):
@@ -94,22 +94,6 @@ class FocusTimer(unittest.TestCase):
         self.assertEqual(ob.option(), 1)
 
 
-    def test_Menu_option_change_work(self):
-        #user should be prompted to put in selection in function before this and then option called
-        #this option will open menu to change work time
-        ob = Menu.Menu()
-        ob.select = 2
-        self.assertEqual(ob.option(), 2)
-
-
-    def test_Menu_option_change_off(self):
-        #user should be prompted to put in selection in function before this and then option called
-        #this option will open menu to change break time
-        ob = Menu.Menu()
-        ob.select = 3
-        self.assertEqual(ob.option(), 3)
-
-
     def test_Menu_option_quit(self):
         #user should be prompted to put in selection in function before this and then option called
         #this option will exit the loop
@@ -148,14 +132,9 @@ class FocusTimer(unittest.TestCase):
         self.assertEqual(ob.time_start(), 1)
 
 
-
-
-
-
-
-
     #integration tests
     def test_Menu_select_input(monkeypatch):
+        select_input_mock0 = StringIO('0\n')
         monkeypatch.setattr('sys.stdin', select_input_mock0)
         ob = Menu.Menu()
         assert ob.time_start() == 0
@@ -163,6 +142,7 @@ class FocusTimer(unittest.TestCase):
 
     def test_Menu_edit_work(monkeypatch):
         ob = Menu.Menu()
+        edit_mock1 = StringIO('1\n')
         monkeypatch.setattr('sys.stdin', edit_mock1)
         ob.edit_work()
         #edit work will take in user input for the amount of minutes
@@ -172,6 +152,7 @@ class FocusTimer(unittest.TestCase):
 
     def test_Menu_edit_off(monkeypatch):
         ob = Menu.Menu()
+        edit_mock1 = StringIO('1\n')
         monkeypatch.setattr('sys.stdin', edit_mock1)
         ob.edit_off()
         #edit work will take in user input for the amount of minutes
@@ -179,7 +160,20 @@ class FocusTimer(unittest.TestCase):
         #Work's time should now be equal to 60 times the user inputted time
 
 
+    #def test_Menu_option_change_work(self):
+        #user should be prompted to put in selection in function before this and then option called
+        #this option will open menu to change work time
+        #ob = Menu.Menu()
+        #ob.select = 2
+        #self.assertEqual(ob.option(), 2)
 
+
+    #def test_Menu_option_change_off(self):
+        #user should be prompted to put in selection in function before this and then option called
+        #this option will open menu to change break time
+        #ob = Menu.Menu()
+        #ob.select = 3
+        #self.assertEqual(ob.option(), 3)
 
 
 
