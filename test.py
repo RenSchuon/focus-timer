@@ -62,21 +62,32 @@ class FocusTimer(unittest.TestCase):
         #user should be prompted to put in selection in function before this and then option called
         #this option will start the timer
         ob = Menu.Menu()
-        self.assertEqual(ob.option(1), 1)
+        #default initilization is 1
+        self.assertEqual(ob.option(), 1)
 
 
     def test_Menu_option_change(self):
         #user should be prompted to put in selection in function before this and then option called
-        #this option will open menu to change time
+        #this option will open menu to change work time
         ob = Menu.Menu()
-        self.assertEqual(ob.option(2), 2)
+        ob.select = 2
+        self.assertEqual(ob.option(), 2)
+
+
+    def test_Menu_option_change(self):
+        #user should be prompted to put in selection in function before this and then option called
+        #this option will open menu to change break time
+        ob = Menu.Menu()
+        ob.select = 3
+        self.assertEqual(ob.option(), 3)
 
 
     def test_Menu_option_quit(self):
         #user should be prompted to put in selection in function before this and then option called
         #this option will exit the loop
         ob = Menu.Menu()
-        self.assertEqual(ob.option(0), 0)
+        ob.aelect = 0
+        self.assertEqual(ob.option(), 0)
 
 
 if __name__ == '__main__':
