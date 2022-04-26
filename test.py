@@ -55,6 +55,8 @@ class FocusTimer(unittest.TestCase):
 
     def test_Timer_start(self):
         ob = Timer.Timer()
+        ob.time = 60
+        #i don't want these tests to run forever
         result = ob.start()
         self.assertEqual(result, 1)
 
@@ -87,6 +89,8 @@ class FocusTimer(unittest.TestCase):
         #user should be prompted to put in selection in function before this and then option called
         #this option will start the timer
         ob = Menu.Menu()
+        ob.work.time = 60
+        #i don't want these tests to run forever
         #default initilization is 1
         self.assertEqual(ob.option(), 1)
 
@@ -131,12 +135,16 @@ class FocusTimer(unittest.TestCase):
     
     def test_Menu_time_start_work(self):
         ob = Menu.Menu()
+        ob.work.time = 60
+        #i don't want these tests to run forever
         #type is default set to 0
         self.assertEqual(ob.time_start(), 0)
 
 
     def test_Menu_time_start_off(self):
         ob = Menu.Menu()
+        ob.off.time = 60
+        #i don't want these tests to run forever
         ob.type = 1
         self.assertEqual(ob.time_start(), 1)
 
