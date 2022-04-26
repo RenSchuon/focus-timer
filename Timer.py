@@ -16,7 +16,9 @@ class Timer(object):
 
       def start(self):
         for i in range(self.time):
-          print(self.get_min(self.time-i) + ':' + self.get_sec(self.time-i))
+          print(self.get_min(self.time-i))
+          print(':')
+          print(self.get_sec(self.time-i))
           time.sleep(1)
         print('Done!\a')
         return 1
