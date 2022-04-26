@@ -44,6 +44,10 @@ class FocusTimer(unittest.TestCase):
         sec = ob.get_sec()
         self.assertEqual(sec, 55)
 
+    def test_Timer_start(self):
+        ob = Timer.Timer()
+        result = ob.start()
+        self.assertEqual(result, 0)
 
 if __name__ == '__main__':
     unittest.main()
