@@ -6,6 +6,7 @@ class Timer(object):
         return self.time
 
       def get_min(self):
-        return self.time/60
+        result = int(self.time/60)
+        return result
 
       
