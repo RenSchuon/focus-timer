@@ -5,6 +5,8 @@ import Menu
 
 #global variables for user input mocking
 select_input_mock0 = StringIO('0\n')
+edit_work_mock2 = StringIO('2\n')
+edit_off_mock1 = StringIO('2\n')
 
  
 class FocusTimer(unittest.TestCase):

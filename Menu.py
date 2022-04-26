@@ -51,19 +51,15 @@ class Menu(object):
 
     
     def edit_work(self):
-        new_time = input("input the new time in minutes")
+        new_time = int(input("input the new time in minutes"))
         new_time = new_time * 60
         self.work.time = new_time
         return new_time
 
 
     def edit_off(self):
-        new_time = input("input the new time in minutes")
+        new_time = int(input("input the new time in minutes"))
         new_time = new_time * 60
         self.off.time = new_time
         return new_time
 
-
-    def bad_entry(self):
-        print("invalid selection")
-        self.select_input()
