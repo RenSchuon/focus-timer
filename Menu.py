@@ -29,7 +29,7 @@ class Menu(object):
             print("goodbye")
             return 0
         else:
-            self.bad_entry()
+            print("invalid selection")
             return -1
 
 
