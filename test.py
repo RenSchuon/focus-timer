@@ -84,7 +84,7 @@ class FocusTimer(unittest.TestCase):
         self.assertEqual(ob.option(), 1)
 
 
-    def test_Menu_option_change(self):
+    def test_Menu_option_change_work(self):
         #user should be prompted to put in selection in function before this and then option called
         #this option will open menu to change work time
         ob = Menu.Menu()
@@ -92,7 +92,7 @@ class FocusTimer(unittest.TestCase):
         self.assertEqual(ob.option(), 2)
 
 
-    def test_Menu_option_change(self):
+    def test_Menu_option_change_off(self):
         #user should be prompted to put in selection in function before this and then option called
         #this option will open menu to change break time
         ob = Menu.Menu()
@@ -106,6 +106,14 @@ class FocusTimer(unittest.TestCase):
         ob = Menu.Menu()
         ob.aelect = 0
         self.assertEqual(ob.option(), 0)
+
+
+    def test_Menu_option_bad_entry(self):
+        #user should be prompted to put in selection in function before this and then option called
+        #this option will display error message
+        ob = Menu.Menu()
+        ob.aelect = 18
+        self.assertEqual(ob.option(), -1)
 
 
 if __name__ == '__main__':

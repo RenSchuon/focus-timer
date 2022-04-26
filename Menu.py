@@ -18,6 +18,19 @@ class Menu(object):
     def option(self):
         if self.select == 1:
             self.time_start()
+            return 1
+        elif self.select == 2:
+            self.edit_work()
+            return 2
+        elif self.select == 3:
+            self.edit_off()
+            return 3
+        elif self.select == 0:
+            self.goodbye()
+            return 0
+        else:
+            self.bad_entry()
+            return -1
 
 
     def loop(self):
