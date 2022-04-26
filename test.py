@@ -132,11 +132,16 @@ class FocusTimer(unittest.TestCase):
         ob = Menu.Menu()
         #ob.edit_work()
         #edit work will take in user input for the amount of minutes
-        #self.assertEqual(ob.time_start(), 1)
+        #self.assertEqual(, )
         #Work's time should now be equal to 60 times the user inputted time
 
 
-
+    def test_Menu_edit_off(self):
+        ob = Menu.Menu()
+        #ob.edit_off()
+        #edit work will take in user input for the amount of minutes
+        #self.assertEqual(, )
+        #Work's time should now be equal to 60 times the user inputted time
 
 
 
