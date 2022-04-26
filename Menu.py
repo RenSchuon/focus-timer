@@ -51,6 +51,7 @@ class Menu(object):
 
     
     def edit_work(self):
+        new_time = 1
         new_time = int(input("input the new time in minutes"))
         new_time = new_time * 60
         self.work.time = new_time
@@ -58,6 +59,7 @@ class Menu(object):
 
 
     def edit_off(self):
+        new_time = 1
         new_time = int(input("input the new time in minutes"))
         new_time = new_time * 60
         self.off.time = new_time
