@@ -162,14 +162,14 @@ class FocusTimer(unittest.TestCase):
         #user should be prompted to put in selection in function before this and then option called
         #this option will open menu to change work time
         ob = Menu.Menu()
-        ob.edit_work()
+        ob.select = 2
         self.assertEqual(ob.work.time, 60)
 
-
-    #def test_Menu_option_change_off(self):
+    @patch("builtins.input", side_effect=[1, 0])
+    def test_Menu_option_change_off(self, mock_input):
         #user should be prompted to put in selection in function before this and then option called
         #this option will open menu to change break time
-        #ob = Menu.Menu()
+        ob = Menu.Menu()
         #ob.select = 3
         #self.assertEqual(ob.option(), 3)
 
