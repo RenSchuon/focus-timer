@@ -140,13 +140,12 @@ class FocusTimer(unittest.TestCase):
         self.assertEqual(ob.select_input(), 0) 
 
 
-    #def test_Menu_edit_work(monkeypatch):
-        #ob = Menu.Menu()
-        #edit_mock1 = StringIO('1\n')
-        #monkeypatch.setattr('sys.stdin', edit_mock1)
-        #ob.edit_work()
+    @patch("builtins.input", side_effect=[1, 0])
+    def test_Menu_edit_work(self, mock_input):
+        ob = Menu.Menu()
+        ob.edit_work()
         #edit work will take in user input for the amount of minutes
-        #assert ob.work.time == 60
+        self.assertEqual(ob.work.time, 60) 
         #Work's time should now be equal to 60 times the user inputted time
 
 
