@@ -150,7 +150,7 @@ class FocusTimer(unittest.TestCase):
 
 
     @patch("builtins.input", side_effect=[1, 0])
-    def test_Menu_edit_off(self, mock_input)):
+    def test_Menu_edit_off(self, mock_input):
         ob = Menu.Menu()
         ob.edit_off()
         #edit work will take in user input for the amount of minutes
