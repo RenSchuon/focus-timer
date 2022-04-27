@@ -158,7 +158,7 @@ class FocusTimer(unittest.TestCase):
         #Work's time should now be equal to 60 times the user inputted time
 
     @patch("builtins.input", side_effect=[3, 1, 0])
-    #def test_Menu_option_change_work(self):
+    def test_Menu_option_change_work(self, mock_input):
         #user should be prompted to put in selection in function before this and then option called
         #this option will open menu to change work time
         ob = Menu.Menu()
