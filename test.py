@@ -2,6 +2,7 @@ import unittest
 import Timer
 import Menu
 import io
+from unittest.mock import patch
 
 #global variables for user input mocking
 
