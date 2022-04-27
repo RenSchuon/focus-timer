@@ -1,7 +1,7 @@
 import unittest
-from io import StringIO
 import Timer
 import Menu
+import io
 
 #global variables for user input mocking
 
