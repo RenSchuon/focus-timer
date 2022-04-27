@@ -133,11 +133,10 @@ class FocusTimer(unittest.TestCase):
 
 
     #integration tests
-    def test_Menu_select_input(monkeypatch):
-        mock = StringIO('0\n')
-        monkeypatch.setattr('sys.stdin', mock)
+    @patch("builtins.input", side_effect=[0])
+    def test_Menu_select_input(self, mock_input):
         ob = Menu.Menu()
-        assert ob.time_start() == 0
+        self.assertEqual(ob.select_input() == 0) 
 
 
     #def test_Menu_edit_work(monkeypatch):
