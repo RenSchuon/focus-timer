@@ -157,19 +157,21 @@ class FocusTimer(unittest.TestCase):
         self.assertEqual(ob.off.time, 60)
         #Work's time should now be equal to 60 times the user inputted time
 
+
     @patch("builtins.input", side_effect=[1, 0])
     def test_Menu_option_change_work(self, mock_input):
         #user should be prompted to put in selection in function before this and then option called
         #this option will open menu to change work time
         ob = Menu.Menu()
         ob.select = 2
-        self.assertEqual(ob.work.time, 60)
+        self.assertEqual(ob.option(), 2)
 
-    @patch("builtins.input", side_effect=[1, 0])
-    def test_Menu_option_change_off(self, mock_input):
+
+    @#patch("builtins.input", side_effect=[1, 0])
+    #def test_Menu_option_change_off(self, mock_input):
         #user should be prompted to put in selection in function before this and then option called
         #this option will open menu to change break time
-        ob = Menu.Menu()
+        #ob = Menu.Menu()
         #ob.select = 3
         #self.assertEqual(ob.option(), 3)
 
