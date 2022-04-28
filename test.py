@@ -174,7 +174,6 @@ class FocusTimer(unittest.TestCase):
     @patch("builtins.input", side_effect=[0])
     def test_Menu_select_input_quit(self, mock_input):
         ob = Menu.Menu()
-        ob.select_input()
         self.assertEqual(ob.select_input(), 0) 
 
 
