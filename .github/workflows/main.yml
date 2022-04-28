@@ -18,5 +18,9 @@ jobs:
       - name: Test with pytest
         run: |
           python3 test.py
-          
-  
+      - name: coverage stuff 
+        run: |
+          coverage run -m unittest discover
+      - name: coverage report
+        run: |
+          coverage report
