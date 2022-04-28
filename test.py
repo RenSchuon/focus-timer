@@ -162,7 +162,7 @@ class FocusTimer(unittest.TestCase):
         self.assertEqual(ob.option(), 2)
 
 
-    @patch("builtins.input", side_effect=[1, 0])
+    @patch("builtins.input", side_effect=[1])
     def test_Menu_option_change_off(self, mock_input):
         #user should be prompted to put in selection in function before this and then option called
         #this option will open menu to change break time
@@ -177,20 +177,22 @@ class FocusTimer(unittest.TestCase):
         self.assertEqual(ob.select_input(), 0) 
 
 
-    @patch("builtins.input", side_effect=[1, 0])
+    @patch("builtins.input", side_effect=[1, 1])
     def test_Menu_select_input_start_time(self, mock_input):
         ob = Menu.Menu()
+        ob.edit_work()
+        #this should make it not take forever
         self.assertEqual(ob.select_input(), 1)
 
 
-    @patch("builtins.input", side_effect=[2, 1, 0])
+    @patch("builtins.input", side_effect=[2, 1])
     def test_Menu_select_input_edit_work(self, mock_input):
         ob = Menu.Menu()
         ob.select_input()
         self.assertEqual(ob.work.time, 60)
 
 
-    @patch("builtins.input", side_effect=[3, 1, 0])
+    @patch("builtins.input", side_effect=[3, 1])
     def test_Menu_select_input_edit_off(self, mock_input):
         ob = Menu.Menu()
         ob.select_input()
